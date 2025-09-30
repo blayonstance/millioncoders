@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.registration-page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header Styles */
+.registration-header {
+  background-color: #ffffff;
+  border-bottom: 2px solid #e5e7eb;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.header-content {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.register-logo {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.page-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+/* Main Content */
+.registration-main {
+  padding: 32px 0 80px;
+}
+
+.form-wrapper {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 32px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Form Group */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 4px;
+}
+
+/* Form Inputs */
+.form-input {
+  padding: 14px 16px;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #1f2937;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #003366;
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+}
+
+.form-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Phone Input Wrapper */
+.phone-input-wrapper {
+  display: flex;
+  align-items: center;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  background-color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.phone-input-wrapper:focus-within {
+  border-color: #003366;
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+}
+
+.country-code {
+  padding: 14px 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #6b7280;
+  background-color: #f9fafb;
+  border-right: 2px solid #e5e7eb;
+}
+
+.phone-input {
+  border: none;
+  padding-left: 12px;
+  box-shadow: none;
+  flex: 1;
+}
+
+.phone-input:focus {
+  box-shadow: none;
+}
+
+/* Select Inputs */
+.form-select {
+  padding: 14px 16px;
+  border: 2px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #1f2937;
+  background-color: #ffffff;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+  background-position: right 12px center;
+  background-repeat: no-repeat;
+  background-size: 16px;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-select:focus {
+  outline: none;
+  border-color: #003366;
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+}
+
+/* Error States */
+.form-input.error,
+.form-select.error {
+  border-color: #dc2626;
+}
+
+.phone-input-wrapper:has(.error) {
+  border-color: #dc2626;
+}
+
+.error-message {
+  font-size: 14px;
+  color: #dc2626;
+  margin-top: 4px;
+}
+
+/* Submit Button */
+.submit-btn {
+  background-color: #003366;
+  color: white;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.submit-btn:hover:not(:disabled) {
+  background-color: #003366;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+}
+
+.submit-btn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.submit-btn.submitting {
+  position: relative;
+}
+
+.submit-btn.submitting::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  border: 2px solid #ffffff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translateY(-50%) rotate(0deg); }
+  100% { transform: translateY(-50%) rotate(360deg); }
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.nav-indicator {
+  width: 80px;
+  height: 4px;
+  background-color: #000000;
+  border-radius: 2px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .registration-main {
+    padding: 24px 0 64px;
+  }
+  
+  .form-wrapper {
+    padding: 24px 20px;
+    margin: 0 8px;
+    border-radius: 6px;
+  }
+  
+  .page-title {
+    font-size: 20px;
+  }
+  
+  .registration-form {
+    gap: 20px;
+  }
+  
+  .form-input,
+  .form-select {
+    padding: 12px 14px;
+    font-size: 16px;
+  }
+  
+  .country-code {
+    padding: 12px 14px;
+  }
+  
+  .submit-btn {
+    padding: 14px 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container,
+  .header-content {
+    padding: 0 12px;
+  }
+  
+  .form-wrapper {
+    padding: 20px 16px;
+    margin: 0 4px;
+  }
+  
+  .page-title {
+    font-size: 18px;
+  }
+  
+  .register-logo {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .logo-section {
+    gap: 12px;
+  }
+}
+
+/* Focus and Accessibility */
+.form-input:focus,
+.form-select:focus {
+  outline: 2px solid #003366;
+  outline-offset: 2px;
+}
+
+/* Custom styling for date input */
+.form-input[type="date"] {
+  position: relative;
+}
+
+.form-input[type="date"]::-webkit-calendar-picker-indicator {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3e%3cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z'/%3e%3c/svg%3e");
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.password-setup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.password-setup-form {
+  background-color: white;
+  padding: 32px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.password-setup-form h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+  color: #1f2937;
+}
+
+.password-setup-form p {
+  color: #6b7280;
+  margin-bottom: 24px;
+  font-size: 14px;
+}

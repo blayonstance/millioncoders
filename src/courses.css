@@ -1,0 +1,377 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.courses-page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  position: relative;
+}
+
+/* Remove the childish pattern overlay */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* Header Styles - FIXED */
+.courses-header {
+  position: relative;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.header-image {
+  width: 100%;
+  height: 80px; /* Reduced from 120px */
+  overflow: hidden;
+}
+
+.header-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* Navigation - FIXED */
+.nav {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  display: flex;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 8px 16px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #374151;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.nav a:hover,
+.nav a.active {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.mobile-menu-btn {
+  display: none;
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  z-index: 60;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu-btn span {
+  width: 20px;
+  height: 2px;
+  background-color: #374151;
+  transition: 0.3s;
+}
+
+/* Main Content */
+.courses-main {
+  padding: 32px 0 48px;
+  position: relative;
+}
+
+/* Courses Title Section - Professional Government Style */
+.courses-title-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  background-color: #ffffff;
+  padding: 20px 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e5e7eb;
+  width: fit-content;
+  margin: 0 auto 40px auto;
+}
+
+.courses-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.courses-icon img {
+  width: 190%;
+  height: 190%;
+  object-fit: contain;
+}
+
+.courses-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: 0.5px;
+}
+
+/* Courses Grid */
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.course-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  position: relative;
+}
+
+/* Professional colored accent bar */
+.course-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 0 0 6px 6px;
+  background-color: var(--card-color, #2563eb);
+}
+
+.course-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+  border-color: #d1d5db;
+}
+
+/* Course Icon - Full space for images, no background color */
+.course-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  background-color: #f8f9fa;
+  border: 2px solid #e5e7eb;
+}
+
+.course-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.course-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  text-align: center;
+  line-height: 1.3;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+}
+
+.nav-indicator {
+  width: 80px;
+  height: 4px;
+  background-color: #000000;
+  border-radius: 2px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .header-image {
+    height: 70px; /* Further reduced for mobile */
+  }
+  
+  .nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    flex-direction: column;
+    padding: 70px 16px 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-radius: 0;
+    gap: 16px;
+    backdrop-filter: none;
+  }
+  
+  .nav-open {
+    display: flex;
+  }
+  
+  .mobile-menu-btn {
+    display: flex;
+    top: 8px;
+  }
+  
+  .courses-title {
+    font-size: 24px;
+  }
+  
+  .courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    padding: 0 8px;
+  }
+  
+  .course-card {
+    padding: 20px 12px;
+    border-radius: 12px;
+  }
+  
+  .course-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .course-image {
+    width: 80%;
+    height: 80%;
+  }
+  
+  .course-name {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .courses-main {
+    padding: 16px 0 32px;
+  }
+  
+  .header-image {
+    height: 60px; /* Even smaller for very small screens */
+  }
+  
+  .courses-title-section {
+    margin-bottom: 24px;
+  }
+  
+  .courses-icon {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .courses-title {
+    font-size: 20px;
+  }
+  
+  .courses-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  
+  .course-card {
+    padding: 16px 8px;
+  }
+  
+  .course-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .course-name {
+    font-size: 11px;
+  }
+}
+
+/* Desktop Enhancements */
+@media (min-width: 1024px) {
+  .courses-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+  
+  .course-card {
+    padding: 32px 20px;
+  }
+  
+  .course-icon {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .course-name {
+    font-size: 15px;
+  }
+}
+.nav-logout {
+  background: none;
+  border: none;
+  color: #374151;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.nav-logout:hover {
+  background-color: #2563eb;
+  color: white;
+}
+.nav-profile {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 2px solid #2563eb;
+  background-color: transparent;
+  transition: all 0.2s ease;
+}
+
+.nav-profile:hover {
+  background-color: #2563eb;
+  color: white;
+}

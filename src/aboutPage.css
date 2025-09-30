@@ -1,0 +1,174 @@
+.about-page {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: linear-gradient(135deg, #9fb9d3 0%, #4e4c4c 100%);
+  min-height: 100vh;
+  color: #f1f5f9;
+  overflow-x: hidden;
+}
+
+/* Header */
+.about-header {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.about-header .header-image img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+}
+
+.about-nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 12px;
+  background: #ffffff; /* solid white bar */
+  border-bottom: 1px solid #e5e7eb;
+  border-radius: 0 0 12px 12px; /* subtle rounding */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.about-nav a {
+  color: #003366; /* deep navy text */
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.about-nav a:hover {
+  background: #f3f4f6; /* light ash hover */
+  color: #111827;
+}
+
+/* Glass Utility */
+.glass-card {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 20px;
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  color: #f1f5f9;
+}
+
+/* Hero Section */
+.about-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.hero-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #d1d5db;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 16px;
+  transition: transform 0.3s;
+  object-fit: fill;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.hero-image img:hover {
+  transform: scale(1.03);
+}
+
+
+.coders-logo {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.one { color: #dc2626; }
+.million { color: #fbbf24; }
+.coders { color: #059669; }
+
+.hero-caption {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 8px;
+  font-style: italic;
+  color: #e2e8f0;
+}
+
+/* Mission */
+.about-mission {
+  margin: 40px auto;
+  padding: 0 20px;
+  max-width: 1100px;
+  text-align: center;
+}
+
+.about-mission h2 {
+  font-size: 26px;
+  margin-bottom: 24px;
+  color: #f8fafc;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.mission-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.mission-card p {
+  font-size: 15px;
+  color: #e5e7eb;
+}
+
+/* Vision */
+.about-vision {
+  max-width: 800px;
+  margin: 40px auto;
+  text-align: center;
+  color: #f8fafc;
+}
+
+/* Footer */
+.about-footer {
+  margin-top: 60px;
+  text-align: center;
+  padding: 16px;
+  font-size: 14px;
+  background: rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e5e7eb;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
